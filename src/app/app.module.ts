@@ -8,6 +8,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { ErrorComponent } from './error/error.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { CircleComponent } from './circle/circle.component';
+import { BmiComponent } from './bmi/bmi.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { ErrorComponent } from './error/error.component';
     DashboardComponent,
     HomeComponent,
     DetailsComponent,
-    ErrorComponent
+    ErrorComponent,
+    WelcomeComponent,
+    CalculatorComponent,
+    CircleComponent,
+    BmiComponent,
+    DataBindingComponent
   ],
   imports: [
     BrowserModule,

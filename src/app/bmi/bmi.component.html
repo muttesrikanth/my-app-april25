@@ -1,0 +1,35 @@
+
+<body class="card">
+    <h1>bmi calculator</h1>
+    <label>enter weight in kg :</label>
+    <input type="number"  id="weight"><br>
+    <label>enter height in mt :</label>
+    <input type="number"  id="height"><br>
+    <button onclick="calculate()">calculate</button>
+
+    <h3 id="bmi">bmi</h3>
+    <h3 id="status">status</h3>
+
+    <script>
+        function calculate(){
+            var weight=document.getElementById("weight").value;
+            
+            console.log(weight, height)
+            var bmi= weight/(height*height)
+            document.getElementById("bmi").innerText=parseInt(bmi);
+            if(bmi<=18.4){
+                var status="under weight"
+            }
+            else if ((bmi>18.5)&&(bmi<25)){
+                status="normal"
+            }
+            else if ((bmi>25)&&(bmi<40)){
+                status="over weight"
+            }
+            else {
+                status="obese"
+            }
+            document.getElementById("status").innerText=status;
+        }
+    </script>
+</body>

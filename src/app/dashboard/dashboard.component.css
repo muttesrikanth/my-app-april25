@@ -7,9 +7,45 @@
     width: 20%;
     height: 100%;
     background-color: plum;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 .right{
     width: 80%;
     height: 100%;
     background-color: coral;
+}
+h1{
+    color: rgb(43, 255, 0);
+}
+hr{
+    width: 100%;
+}
+h1,h2{
+    margin: 10px 0px;
+}
+h2{
+    margin-right: auto;
+    text-align: left !important;
+    margin-left: 20px;
+}
+h2:hover{
+    color: white;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+    scale: 0.8;
+}
+h2:active{
+    color: red;
+}
+button{
+    background-color: red;
+    border: none;
+    padding: 10px 42px;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0 10px;
+    margin-top: auto;
+    margin-bottom: 10px;
 }

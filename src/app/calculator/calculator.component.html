@@ -1,0 +1,194 @@
+
+    <style>
+      * {
+        margin: 0;
+      }
+
+      .parent {
+        width: 100vw;
+        height: 80vh;
+        overflow: auto;
+      }
+
+      .calculator {
+        padding: 20px;
+        background-color: #74ff74;
+        border-radius: 10px;
+        gap: 10px;
+        margin: 5px;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .justify-center {
+        justify-content: center;
+      }
+
+      .align-center {
+        align-items: center;
+      }
+
+      .flex-col {
+        flex-direction: column;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+        color: #4b0082;
+        text-align: center;
+      }
+
+      label {
+        color: #8b008b;
+        font-weight: 800;
+      }
+
+      input {
+        padding: 7px 10px;
+        border: 1px solid #cda2d8;
+        border-radius: 15px;
+      }
+
+      button {
+        padding: 5px 10px;
+        color: #4a61bb;
+        background-color: #ff91a4;
+        border: none;
+        border-radius: 20px;
+      }
+
+      .gap5 {
+        gap: 10px;
+      }
+
+      h2 {
+        margin-top: 10px;
+        text-align: right;
+      }
+
+      .parent div:nth-child(even) {
+        margin-left: 300px;
+        box-shadow: -20px 0px 30px 15px black;
+      }
+      .parent div:nth-child(odd) {
+        margin-right: 300px;
+        box-shadow: 20px 0px 30px 15px black;
+      }
+      .main{
+        width: 300px;
+      }
+    </style>
+    <div  class="parent flex flex-col justify-center align-center">
+      <div class="calculator main">
+        <h1>Calculator</h1>
+        <br />
+        <label for="">First number &nbsp; &nbsp; &nbsp;:</label>
+        <input type="number" id="firstNumber" /><br />
+        <span id="operator"></span><br />
+        <label for="">second number &nbsp;:</label>
+        <input type="number" id="secondNumber" /><br />
+        <br />
+        <!-- <div class="flex gap5 align-center justify-center"> -->
+          <button onclick="add()">ADD</button>
+          <button onclick="sub()">SUB</button>
+          <button onclick="mul()">MUL</button>
+          <button onclick="div()">DIV</button>
+        <!-- </div> -->
+        <h2 id="result">Result</h2>
+      </div>
+      <div  class="calculator">
+        <h1>Major/Minor</h1>
+        <label for="">Enter your age:</label>
+        <input type="number" id="majorcheck" />
+        <h2 id="major">Result</h2>
+        <button onclick="check()">check</button>
+      </div>
+      <!-- <div class="calculator">
+        <h1>Pass/Fail</h1>
+        <label for="">Enter your marks:</label>
+        <input type="number" id="passcheck" />
+        <h2 id="pass">Result</h2>
+        <button onclick="pcheck()">check</button>
+      </div>
+      <div class="calculator">
+        <h1>Even/Odd</h1>
+        <label for="">Enter a number:</label>
+        <input type="number" id="numbers" />
+        <h2 id="even">Result</h2>
+        <button onclick="echeck()">check</button>
+      </div>
+
+      <div class="calculator">
+        <h1>vowel/consonant check</h1>
+        <label>Enter a charactor:</label>
+        <input type="text" id="charactor" />
+        <h2 id="vowel">Result</h2>
+        <button onclick="vowelcheck()">check</button>
+      </div> -->
+      <script>
+        function vowelcheck() {
+          var car = document.getElementById("charactor").value;
+          var vowel = ["a", "e", "i", "o", "u"];
+          if (vowel.includes(car.toLowerCase())) {
+            document.getElementById("vowel").innerText = "Vowel";
+          } else {
+            document.getElementById("vowel").innerText = "consonant";
+          }
+        }
+        function echeck() {
+          var num = document.getElementById("numbers").value;
+          if (num % 2 == 0) {
+            document.getElementById("even").innerText = "Even";
+          } else {
+            document.getElementById("even").innerText = "Odd";
+          }
+        }
+        function check() {
+          var age = document.getElementById("majorcheck").value;
+          if (age < 17) {
+            document.getElementById("major").innerText = "Minor";
+          } else {
+            document.getElementById("major").innerText = "Major";
+          }
+        }
+        function pcheck() {
+          var marks = document.getElementById("passcheck").value;
+          if (marks < 36) {
+            document.getElementById("pass").innerText = "Fail";
+          } else {
+            document.getElementById("pass").innerText = "Pass";
+          }
+        }
+        function add() {
+          document.getElementById("operator").innerText = "+";
+          var first = parseInt(document.getElementById("firstNumber").value);
+          var second = parseInt(document.getElementById("secondNumber").value);
+          var res = first + second;
+          document.getElementById("result").innerText = res;
+        }
+        function sub() {
+          document.getElementById("operator").innerText = "-";
+          var first = document.getElementById("firstNumber").value;
+          var second = document.getElementById("secondNumber").value;
+          var res = first - second;
+          document.getElementById("result").textContent = res;
+        }
+        function mul() {
+          document.getElementById("operator").innerText = "x";
+          var first = document.getElementById("firstNumber").value;
+          var second = document.getElementById("secondNumber").value;
+          var res = first * second;
+          document.getElementById("result").textContent = res;
+        }
+        function div() {
+          document.getElementById("operator").innerText = "/";
+          var first = document.getElementById("firstNumber").value;
+          var second = document.getElementById("secondNumber").value;
+          var res = first / second;
+          document.getElementById("result").textContent = res;
+        }
+      </script>
+    </div>
+ 

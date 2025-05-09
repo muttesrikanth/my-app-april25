@@ -5,13 +5,22 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailsComponent } from './details/details.component';
 import { ErrorComponent } from './error/error.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { CircleComponent } from './circle/circle.component';
+import { BmiComponent } from './bmi/bmi.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
  
   {path:"dashboard",component:DashboardComponent,children:[
     {path:"home",component:HomeComponent},
-    {path:"details",component:DetailsComponent},
+    {path:"data-binding",component:DataBindingComponent},
+    {path:"welcome",component:WelcomeComponent},
+    {path:"calculator",component:CalculatorComponent},
+    {path:"circle",component:CircleComponent},
+    {path:"bmi",component:BmiComponent},
   ]},
   {path:"**",component:ErrorComponent}
 ];
