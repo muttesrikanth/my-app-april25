@@ -1,1 +1,27 @@
-<p>data-binding works!</p>
+<h1>data binding</h1>
+<button (click)="greet()">greet</button>
+<input type="text" (keyup)="typing()">
+
+<select (change)="team()">
+    <option>CSK</option>
+    <option>MI</option>
+    <option>SRH</option>
+    <option>RR</option>
+    <option>KKR</option>
+</select>
+<h1>{{message}}</h1>
+<input type="text" [disabled]="disabled"><br>
+<input type="text" [value]="value"><br>
+<br>
+
+<input type="text" [(ngModel)]="mobile">
+
+{{mobile}}
+
+<h2>calculator</h2>
+<label>num1:</label>
+<input type="number" [(ngModel)]="num1"><br>
+<label>num2:</label>
+<input type="number" [(ngModel)]="num2"><br>
+<button (click)="calculate()" [disabled]="num1==0||num2==0">calculate</button>
+<h2>{{sum}}</h2>

@@ -10,15 +10,18 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { CircleComponent } from './circle/circle.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { RectangleComponent } from './rectangle/rectangle.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
  
   {path:"dashboard",component:DashboardComponent,children:[
-    {path:"home",component:HomeComponent},
+    {path:"",component:HomeComponent},
     {path:"data-binding",component:DataBindingComponent},
     {path:"welcome",component:WelcomeComponent},
     {path:"calculator",component:CalculatorComponent},
+    
+    {path:"rectangle",component:RectangleComponent},
     {path:"circle",component:CircleComponent},
     {path:"bmi",component:BmiComponent},
   ]},

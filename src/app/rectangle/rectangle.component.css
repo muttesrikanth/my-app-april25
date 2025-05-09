@@ -1,0 +1,34 @@
+.parent{
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 220px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    padding: 20px;
+
+    background-color: rgb(235, 239, 243);
+}
+input,button{
+    width: 90%;
+   display: inline-block;
+    padding: 5px;
+    border-radius:10px;
+    border: 1px solid red;
+}
+button{
+    width: 95%;
+    padding: 8px 30px;
+    background-color: aqua;
+    border: none;
+
+}

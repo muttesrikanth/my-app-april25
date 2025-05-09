@@ -2,13 +2,13 @@
 <body class="card">
     <h1>bmi calculator</h1>
     <label>enter weight in kg :</label>
-    <input type="number"  id="weight"><br>
+    <input type="number" [(ngModel)]="wei"  id="weight"><br>
     <label>enter height in mt :</label>
-    <input type="number"  id="height"><br>
-    <button onclick="calculate()">calculate</button>
+    <input type="number" [(ngModel)]="hei" id="height"><br>
+    <button (click)="calculate()">calculate</button>
 
-    <h3 id="bmi">bmi</h3>
-    <h3 id="status">status</h3>
+    <h3 id="bmi">Bmi:{{bmi}}</h3>
+    <h3 id="status">Status:{{status}}</h3>
 
     <script>
         function calculate(){
