@@ -18,5 +18,11 @@ export class VehiclesService {
   sortedVehicals(column:any,order:any):Observable<any>{
      return  this._http.get('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction?sortBy='+column+"&order="+order)
   }
+  paginateVehicals(limit:any,page:any):Observable<any>{
+     return  this._http.get('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction?limit='+limit+"&page="+page)
+  }
+  deleteVehical(id:number):Observable<any>{
+     return  this._http.delete('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction/'+id)
+  }
   
 }

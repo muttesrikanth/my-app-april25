@@ -12,25 +12,41 @@
         <option value="desc">desc</option>
     </select>
     <button class="btn btn-success" (click)="sort()">sort</button>
+    <select [(ngModel)]="limit" class="py-1">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+    </select>
+    <select [(ngModel)]="page" class="py-1" >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <button class="btn btn-success" (click)="paginate()">Paginate</button>
     <table class="w-100 table table-bordered table-hover" border="1" >
-        <thead class="thead-dark">
-            <tr class="bg-secondary">
-                <th class="bg-dark text-light">Vehicle name</th>
-                <th class="bg-dark text-light">cost</th>
-                <th class="bg-dark text-light">color</th>
-                <th class="bg-dark text-light">model</th>
-                <th class="bg-dark text-light">type</th>
-                <th class="bg-dark text-light">fuel</th>
+        <thead >
+            <tr class="table-dark">
+                <th>Vehicle name</th>
+                <th>cost</th>
+                <th>color</th>
+                <th>model</th>
+                <th>type</th>
+                <th>fuel</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let vehical of vehicals; let i = index">
                 <td>{{ vehical.Vehicle }}</td>
-                <td>{{ vehical.cost | currency : "INR" }}</td>
+                <td>{{ vehical.cost  }}</td>
                 <td>{{ vehical.color }}</td>
                 <td>{{ vehical.model }}</td>
                 <td>{{ vehical.type }}</td>
                 <td>{{ vehical.fuel }}</td>
+                <td><button class="btn btn-danger" (click)="delete(vehical.id)">Delete</button></td>
                
             </tr>
         </tbody>

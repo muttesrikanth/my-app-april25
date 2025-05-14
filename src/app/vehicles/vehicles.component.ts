@@ -36,4 +36,27 @@ export class VehiclesComponent {
       alert("Internal Server Error")
     })
   }
+  limit:any=''
+  page:any=""
+  paginate(){
+    this._vehicalService.paginateVehicals(this.limit,this.page).subscribe((data:any)=>{
+      this.vehicals=data
+      console.log(this.vehicals)
+    },(err:any)=>{
+      alert("Internal Server Error")
+    })
+  }
+  delete(id:any){
+    if(confirm("Are you sure to delete")){
+      this._vehicalService.deleteVehical(id).subscribe((data:any)=>{
+        alert('deleted')
+      },(err:any)=>{
+        alert("Internal Server Error")
+      })
+    }
+    else{
+      alert("you have cancelled delete")
+    }
+
+  }
 }
