@@ -12,7 +12,5 @@ export class MailService {
   getMails():Observable<any>{
  return this._http.get("https://jsonplaceholder.typicode.com/todos")
   }
-  getFlipkartProducts():Observable<any>{
-    return this._http.get("https://fakestoreapi.com/products")
-  }
+
 }

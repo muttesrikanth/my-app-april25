@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MailService } from '../mail.service';
+import { FlipkartService } from '../flipkart.service';
 
 @Component({
   selector: 'app-flipkart',
@@ -8,7 +8,7 @@ import { MailService } from '../mail.service';
 })
 export class FlipkartComponent {
 products:any=[]
-constructor(private _product_service:MailService){
+constructor(private _product_service:FlipkartService){
   _product_service.getFlipkartProducts().subscribe((data:any)=>{
     this.products=data
   },(err)=>{
