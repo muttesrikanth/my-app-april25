@@ -1,0 +1,111 @@
+<div class="container-fluid bg-dark background p-0">
+    <div class="w-100 h-30 bg-info d-flex">
+        <div class="w-75">
+            <div>
+                <input type="text" class="m-2 p-1" [(ngModel)]="squery" placeholder="Search Product" (keyup)="search()" />
+                <button class="btn btn-primary m-2" (click)="freedelivery()">
+                    Only Free delivery
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-warning m-2" (click)="plowtoheigh()">
+                    Price low to heigh
+                </button>
+                <button class="btn btn-warning m-2" (click)="pheightolow()">
+                    Price heigh to low
+                </button>
+                <button class="btn btn-warning m-2" (click)="rlowtoheigh()">
+                    Rating low to heigh
+                </button>
+                <button class="btn btn-warning m-2" (click)="rheightolow()">
+                    Rating heigh to low
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-dark m-2" (click)="applyDiscount()">
+                    Apply 50% discount
+                </button>
+                <button class="btn btn-dark m-2" (click)="applyDelCharges()">
+                    Price with delivery charges
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                    (click)="totalprice()">
+                    Total Price
+                </button>
+                <button class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                    (click)="totalItems()">
+                    Total cart items
+                </button>
+            </div>
+        </div>
+
+        <div class="w-25 mt-3">
+            <label>Name:&nbsp;</label>
+            <input type="text" class="m-1" [(ngModel)]="name" /><br />
+            <label>Price: &nbsp;</label>
+            <input type="number" class="m-1" [(ngModel)]="price" /><br />
+            <label>Rating:</label>
+            <input type="number" class="m-1" [(ngModel)]="rating" /><br />
+            <label class="m-1">Free delivery:</label>
+            <input type="radio" name="del" [(ngModel)]="delivery" [value]="true" />
+            <label class="m-1">YES</label>
+            <input type="radio" name="del" [(ngModel)]="delivery" [value]="false" />
+            <label class="m-1">NO</label><br />
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                (click)="addtocart()">
+                Add to cart
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-dark">
+                            <h1 class="modal-title text-danger fs-5" id="staticBackdropLabel">
+                                Cart
+                            </h1>
+                            <button type="button" class="btn-close bg-danger text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-warning">
+                            <h3>{{ message }}</h3>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+        </div>
+    </div>
+    <div class="w-100 h-75 bg-secondary table">
+        <table class="w-100 table table-bordered table-hover" border="1" >
+            <thead class="thead-dark">
+                <tr class="bg-secondary">
+                    <th class="bg-dark text-light">S.NO</th>
+                    <th class="bg-dark text-light">Product name</th>
+                    <th class="bg-dark text-light">Price</th>
+                    <th class="bg-dark text-light">Rating</th>
+                    <th class="bg-dark text-light">Free Delivery</th>
+                    <th class="bg-dark text-light">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of productAll; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price | currency : "INR" }}</td>
+                    <td>{{ product.rating }}</td>
+                    <td>{{ product.delivery }}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container-fluid w-100 h-100 d-flex align-items-center justify-content-center">
+    <div class="card w-50 h-50 d-flex align-items-center justify-content-evenly">
+        <h1 >Weather In Hyderabad</h1>
+        <div class="circle" [ngClass]='{"bg-primary":weatherData.current_weather.temperature<0,"bg-warning":(weatherData.current_weather.temperature>0)&&(weatherData.current_weather.temperature<30),"bg-success":(weatherData.current_weather.temperature>30)&&(weatherData.current_weather.temperature<50),"bg-danger":weatherData.current_weather.temperature>50,}'>
+
+        </div>
+        <h2 class="text-warning fw-bolder">{{weatherData.current_weather.temperature}} {{weatherData.current_weather_units.temperature}}</h2>
+        <div>
+            <p class="p-0 m-0">Wind Speed : {{weatherData.current_weather.windspeed}} {{weatherData.current_weather_units.windspeed}}</p>
+            <p class="p-0 m-0">Wind Direction :{{weatherData.current_weather.winddirection}}{{weatherData.current_weather_units.winddirection}}</p>
+        </div>
+        <p *ngIf="weatherData.current_weather.is_day==1" class="fs-3 text-info">Day time</p>
+        <p *ngIf="weatherData.current_weather.is_day==0" class="fs-3 text-info">Night time</p>
+    </div>
+</div>

@@ -14,4 +14,5 @@ export class DirectivesComponent {
     {name:"shoes",price:20000,rating:3.3},
     {name:"laptop",price:200000,rating:2.3},
   ]
+  today=new Date()
 }

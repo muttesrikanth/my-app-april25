@@ -1,0 +1,21 @@
+.container-fluid{
+    overflow: auto;
+    gap: 20px;    
+}
+.card{
+    position:relative;
+}
+.but{
+    display: none;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+.card:hover img{
+    opacity: 0.5;
+}
+.card:hover .but{
+    display: block;
+}

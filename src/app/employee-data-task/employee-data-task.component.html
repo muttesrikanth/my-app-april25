@@ -1,0 +1,48 @@
+<div class="ms-5">
+<h3>Employees table</h3>
+<input class="p-1" type="text" placeholder="search" [(ngModel)]="term" (keyup)="search()">
+<button class="btn btn-info  m-1 p-2" (click)="bonous()">Bonous</button>
+<button class="btn btn-info m-1 p-2" (click)="ctc()">cost to company</button><br>
+<label>name</label>
+<input type="text" [(ngModel)]="name"><br>
+<label>experence</label>
+<input type="number" [(ngModel)]="experence"><br>
+<label>package</label>
+<input type="number" [(ngModel)]="package"><br>
+<label>role</label>
+<input type="text" [(ngModel)]="rolee"><br>
+<button class="btn btn-success"(click)="add()">Add</button><br>
+<table border="1"n cellSpacing="0" cellPadding="10">
+    <thead>
+        <tr>
+            <th>Sl.no.</th>
+            <th>Name</th>
+            <th>Experience</th>
+            <th>Package</th>
+            <th>Role</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of emp;let i=index">
+            <td>{{i+1}}</td>
+            <td >{{employee.name}}</td>
+            <td  [ngStyle]="{'background-color':employee.experience>5?'green':'red'}">{{employee.experience}}</td>
+            <td [ngClass]="{'yellow':employee.package>1200000,'blue':employee.package<1200000,'orange':employee.package==1200000}">{{employee.package}}</td>
+            <td>{{employee.role}}</td>
+            <td><button (click)="delete(i)">delete</button></td>
+
+        </tr>
+
+    </tbody>
+</table>
+<button (click)="sortHeigh()">ExperenceHeighToLow</button>
+<button (click)="sortHeighpack()">PackageHeighToLow</button>
+<select [(ngModel)]="role" (change)="rolefilter()">
+    <option value="all" active>all</option>
+<option value="UIDeveloper">UIDeveloper</option>
+<option value="Software Developer">Software Developer</option>
+<option value="Data engineer">Data engineer</option>
+<option value="Testing Engineer">Testing Engineer</option>
+</select>
+</div>

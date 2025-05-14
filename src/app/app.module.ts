@@ -16,7 +16,14 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { FormsModule } from '@angular/forms';
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { DirectivesComponent } from './directives/directives.component';
-
+import { EmployeeDataTaskComponent } from './employee-data-task/employee-data-task.component';
+import { ShopingComponent } from './shoping/shoping.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import {HttpClientModule} from '@angular/common/http';
+import { MailComponent } from './mail/mail.component';
+import { FlipkartComponent } from './flipkart/flipkart.component';
+import { WeatherComponent } from './weather/weather.component';
+import { GalleryComponent } from './gallery/gallery.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +38,20 @@ import { DirectivesComponent } from './directives/directives.component';
     BmiComponent,
     DataBindingComponent,
     RectangleComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    EmployeeDataTaskComponent,
+    ShopingComponent,
+    VehiclesComponent,
+    MailComponent,
+    FlipkartComponent,
+    WeatherComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

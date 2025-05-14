@@ -1,0 +1,12 @@
+<div class="container-fluid w-100 h-100 p-2 bg-success d-flex  justify-content-center flex-wrap align-center ">
+    <div class="card mb-3 d-flex" *ngFor="let product of products">
+        <img src={{product.image}}  height="300" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{product.category}}</h5>
+          <p class="card-text text-secondary">{{product.title}}</p>
+          <p class="card-text text-danger">{{product.price|currency:"INR"}}</p>
+          <span class="rating px-3 rounded">{{product.rating.rate}}</span>
+        </div>
+      </div>
+
+</div>

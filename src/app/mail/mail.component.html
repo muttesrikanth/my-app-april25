@@ -1,0 +1,6 @@
+<div class="contaiiner-fluid  w-100 h-100 p-0 bg-light">
+    <div *ngFor="let mail of mailData;let i=index" class="ms-5 m-2">
+        <h4 [ngStyle]='{color:mail.completed?"#aaa":""}'>{{mail.id}}.&nbsp; {{mail.title}}</h4>
+    </div>
+
+</div>

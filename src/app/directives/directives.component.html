@@ -22,3 +22,11 @@
 
 <h1 *ngIf="false">ng if directive true</h1>
 <h1 *ngIf="true">ng if directive false</h1>
+
+<h1>pipes</h1>
+<h4>{{today}}</h4>
+<h4>{{today|date}}</h4>
+<h4>{{today|date:"dd-MM-yyyy"}}</h4>
+<h4>{{today| date:"yyyy-MM-dd" }}</h4>
+<h4>{{today |date:"hh-mm" }}</h4>
+<h4>{{today|date:"hh:mm:ss"}}</h4>

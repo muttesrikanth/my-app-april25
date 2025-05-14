@@ -12,10 +12,18 @@ import { BmiComponent } from './bmi/bmi.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { EmployeeDataTaskComponent } from './employee-data-task/employee-data-task.component';
+import { ShopingComponent } from './shoping/shoping.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { MailComponent } from './mail/mail.component';
+import { FlipkartComponent } from './flipkart/flipkart.component';
+import { WeatherComponent } from './weather/weather.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const routes: Routes = [
+  {path:"shoping",component:ShopingComponent},
   {path:"",component:LoginComponent},
- 
+  
   {path:"dashboard",component:DashboardComponent,children:[
     {path:"",component:HomeComponent},
     {path:"data-binding",component:DataBindingComponent},
@@ -25,6 +33,12 @@ const routes: Routes = [
     {path:"rectangle",component:RectangleComponent},
     {path:"circle",component:CircleComponent},
     {path:"bmi",component:BmiComponent},
+    {path:"vehicles",component:VehiclesComponent},
+    {path:"employee",component:EmployeeDataTaskComponent},
+    {path:"mail",component:MailComponent},
+    {path:"flipkart",component:FlipkartComponent},
+    {path:"weather",component:WeatherComponent},
+    {path:"gallery",component:GalleryComponent},
   ]},
   {path:"**",component:ErrorComponent}
 ];

@@ -1,0 +1,19 @@
+.container-fluid{
+    overflow: auto;
+    gap: 20px;
+    /* padding: 20px; */
+ 
+    }
+.card{
+    width: 333px !important;
+    display:flex !important ;
+    justify-content: space-between !important;
+}
+.card-body{
+    position: relative;
+}
+.rating{
+    position: absolute;
+    top: -40px;
+    background-color: rgba(128, 128, 128, 0.68);
+}

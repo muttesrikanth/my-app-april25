@@ -1,0 +1,12 @@
+.background{
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke !important;
+}
+.table{
+    overflow: auto;
+}
+thead{
+    position: sticky;
+    top: 0;
+}

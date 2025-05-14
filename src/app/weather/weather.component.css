@@ -1,0 +1,10 @@
+.circle{
+    width: 45px;
+    height: 45px;
+    background-color: red;
+    border-radius: 50%;
+}
+h2{
+    font-size: 60px;
+    color: gold;
+}
