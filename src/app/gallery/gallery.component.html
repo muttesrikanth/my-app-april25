@@ -1,8 +1,11 @@
 <div class="container-fluid w-100 h-100 p-2 bg-success d-flex  justify-content-center flex-wrap align-center ">
     <div class="card" *ngFor="let gallery of galleryData">
         <img src={{gallery.download_url}} width="200px" height="200px" class="rounded"  alt={{gallery.author}}>
-        
-            <a href="gallery.download_url"  download={{gallery.id}} class="btn btn-success but">Download</a>
+        <div class="but">
+
+            <p class="text-center text-danger">{{gallery.author}}</p>
+            <a href="gallery.download_url"  download class="btn btn-success ">Download</a>
+        </div>
 
       </div>
 
