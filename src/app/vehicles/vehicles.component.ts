@@ -9,7 +9,10 @@ import { VehiclesService } from '../vehicles.service';
 export class VehiclesComponent {
   vehicals:any=[]
   constructor(private _vehicalService:VehiclesService){
-    _vehicalService.getVehicles().subscribe((data:any)=>{
+    this.loadVehicles()
+  }
+  loadVehicles(){
+    this._vehicalService.getVehicles().subscribe((data:any)=>{
       this.vehicals=data
       console.log(this.vehicals)
     },(err:any)=>{
@@ -49,6 +52,7 @@ export class VehiclesComponent {
   delete(id:any){
     if(confirm("Are you sure to delete")){
       this._vehicalService.deleteVehical(id).subscribe((data:any)=>{
+        this.loadVehicles()
         alert('deleted')
       },(err:any)=>{
         alert("Internal Server Error")
