@@ -1,6 +1,6 @@
 
 <div class="w-100 h-100 bg-secondary table">
-    <input type="search" [(ngModel)]="term" (keyup)="filterData()">
+    <input type="search" [(ngModel)]="term" (keyup)="filterData()"><br>
     <select [(ngModel)]="column" class="py-1">
         <option value="Vehicle">Vehicle</option>
         <option value="cost">cost</option>
@@ -11,21 +11,22 @@
         <option value="asc">asc</option>
         <option value="desc">desc</option>
     </select>
-    <button class="btn btn-success" (click)="sort()">sort</button>
-    <select [(ngModel)]="limit" class="py-1">
+    <button class="btn btn-success" (click)="sort()">sort</button><br>
+    <select [(ngModel)]="limit" class="py-2">
         <option value="10">10</option>
         <option value="20">20</option>
         <option value="30">30</option>
         <option value="40">40</option>
         <option value="50">50</option>
     </select>
-    <select [(ngModel)]="page" class="py-1" >
+    <select [(ngModel)]="page" class="py-2" >
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
     </select>
-    <button class="btn btn-success" (click)="paginate()">Paginate</button>
+    <button class="btn btn-success" (click)="paginate()">Paginate</button><br>
+    <button class="btn btn-danger" routerLink="/dashboard/createVehicle">Create Vehicle</button>
     <table class="w-100 table table-bordered table-hover" border="1" >
         <thead >
             <tr class="table-dark">

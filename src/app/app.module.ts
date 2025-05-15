@@ -13,7 +13,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { CircleComponent } from './circle/circle.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeDataTaskComponent } from './employee-data-task/employee-data-task.component';
@@ -23,7 +23,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { MailComponent } from './mail/mail.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { WeatherComponent } from './weather/weather.component';
-import { GalleryComponent } from './gallery/gallery.component'
+import { GalleryComponent } from './gallery/gallery.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,12 +47,14 @@ import { GalleryComponent } from './gallery/gallery.component'
     FlipkartComponent,
     WeatherComponent,
     GalleryComponent,
+    CreateVehicleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
