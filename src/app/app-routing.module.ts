@@ -20,6 +20,8 @@ import { FlipkartComponent } from './flipkart/flipkart.component';
 import { WeatherComponent } from './weather/weather.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { IdCardsComponent } from './id-cards/id-cards.component';
+import { AddIdCardComponent } from './add-id-card/add-id-card.component';
 
 const routes: Routes = [
   {path:"shoping",component:ShopingComponent},
@@ -41,6 +43,8 @@ const routes: Routes = [
     {path:"weather",component:WeatherComponent},
     {path:"gallery",component:GalleryComponent},
     {path:"createVehicle",component:CreateVehicleComponent},
+    {path:'idcards',component:IdCardsComponent},
+    {path:'addidcards',component:AddIdCardComponent},
   ]},
   {path:"**",component:ErrorComponent}
 ];

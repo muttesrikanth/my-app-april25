@@ -1,0 +1,27 @@
+<div class="card w-50 p-2 bg-secondary text-warning">
+    <h3 class="text-danger">Create Id Card</h3>
+    <form [formGroup]="idCardForm">
+        <label>Student Name</label>
+        <input type="text" formControlName="name"><br>
+        <label>Phone</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="number"formControlName="phone" ><br>
+        <label>City</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" formControlName="city"><br>
+        <label>D.O.B</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="date" formControlName="dob"><br>
+        <label class="me-1">Profile picture</label> 
+        <input type="text" formControlName="profile_picture"><br>
+        <label>Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" formControlName="email"><br>
+        <label>School logo</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" formControlName="school_logo"><br>
+        <label>School name</label>&nbsp;&nbsp;
+        <input type="text" formControlName="school_name"><br>
+        <label>School city</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" formControlName="school_city"><br>
+        <label>School Pin</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="number" formControlName="school_pin"><br>
+        <button class="btn btn-success" (click)="submit()">Submit</button>
+    </form>
+   
+</div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { VehiclesService } from '../vehicles.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-vehicle',
@@ -8,7 +9,7 @@ import { VehiclesService } from '../vehicles.service';
   styleUrls: ['./create-vehicle.component.css']
 })
 export class CreateVehicleComponent {
-  constructor(private _vehicelService:VehiclesService){}
+  constructor(private _vehicelService:VehiclesService,private _router:Router){}
   public vehicleForm:FormGroup=new FormGroup({
     Vehicle:new FormControl(),
     color:new FormControl(),
@@ -25,6 +26,7 @@ submit(){
   this._vehicelService.createVehicel(this.vehicleForm.value).subscribe(
     (data:any)=>{
       alert('created with id:'+data.id)
+      this._router.navigateByUrl('/dashboard/vehicles')
     },(e)=>{
       alert('internal server error')
     }

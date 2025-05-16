@@ -24,7 +24,10 @@ import { MailComponent } from './mail/mail.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { WeatherComponent } from './weather/weather.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component'
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { IdCardsComponent } from './id-cards/id-cards.component';
+import { AddIdCardComponent } from './add-id-card/add-id-card.component';
+import { AccountsComponent } from './accounts/accounts.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +51,9 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
     WeatherComponent,
     GalleryComponent,
     CreateVehicleComponent,
+    IdCardsComponent,
+    AddIdCardComponent,
+    AccountsComponent,
   ],
   imports: [
     BrowserModule,

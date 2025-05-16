@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-fluid{
+    overflow: auto;
+    gap: 20px;
+    height: 95%;    
+}
+.card{
+    width:500px;
+    height: 300px;
+    background-color: rgb(210, 248, 201);
+}
+.college{
+    border-bottom: 2px dashed blue;
+}
+.menu{
+    height: 5%;
+    width: 100%;
+    gap: 10px;
+}
+.menu div{
+    border:3px solid rgb(108, 250, 0);
+    display: flex;
+    align-items: center;
+}

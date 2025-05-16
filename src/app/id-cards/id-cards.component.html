@@ -1,0 +1,80 @@
+
+<div class="menu d-flex justify-content-center  text-dark">
+    <div>
+        <input type="text" [(ngModel)]="term" class="ps-1" placeholder="Text to search" (keyup)="search()">
+    </div>
+    <div>
+        <label class="ms-1 form-label">SortBY:</label>
+        <select class="p-1" [(ngModel)]="column">
+            <option value="name">Student Name</option>
+            <option value="city">City</option>
+            <option value="dob">D.O.B</option>
+            <option value="phone">Phone</option>
+            <option value="school_name">School Name</option>
+            <option value="school_city">School City</option>
+            <option value="school_pin">School Pin</option>
+        </select>
+         <label class="ms-1 form-label">Order:</label>
+        <select class="p-1" [(ngModel)]="order">
+            <option value="asc">A-Z</option>
+            <option value="desc">Z-A</option>
+        </select>
+        <button class="btn btn-primary px-2 py-1 ms-2" (click)="sort()">Sort</button>
+    </div>
+    <div>
+        <label class="ms-1 form-label">Number of items Limit: </label>
+        <select [(ngModel)]="limit" class="p-1">
+            <option value="5" >5</option>
+            <option value="10" >10</option>
+            <option value="15" >15</option>
+            <option value="20" >20</option>
+            <option value="25" >25</option>
+        </select>
+        <label class="ms-1 form-label">Page:</label>
+        <select [(ngModel)]="page" class="p-1">
+            <option value="1" >1</option>
+            <option value="2" >2</option>
+            <option value="3" >3</option>
+            <option value="4" >4</option>
+            <option value="5" >5</option>
+        </select>
+         <button class="btn btn-secondary px-2 py-1 ms-2" (click)="pagefn()">Pagenate</button>
+    </div>
+    <div>
+        <button class="btn btn-danger  px-2 py-1" (click)="createCard()">Add Id-Card</button>
+    </div>
+</div>
+<div class="container-fluid w-100  p-2 bg-dark d-flex  justify-content-center flex-wrap align-center ">
+    <div class="card" *ngFor="let card of cards,let i=index">
+        <div class="d-flex college pb-1">
+            <img src={{card.school_logo}} width="80px" height="70px" class="rounded" alt={{i}}>
+            <div class="m-0 p-0 d-flex flex-column justify-content-center align-center">
+                <p class="h4 ms-3 text-primary text-bold fw-bolder">{{card.school_name}}</p>
+                <div class="d-flex"class="h5 ms-3">
+                    <p class="text-secondary text-capitalize">{{card.school_city}}, {{card.school_pin}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="college">
+            <p class="bg-warning text-center">SESSION : 2025-26</p>
+        </div>
+        <div class="d-flex justify-content-around align-center pt-4 data">
+                <div class="details">
+                    <pre><p>Name   : {{card.name}}</p></pre>
+                    <pre><p>City   : {{card.city}}</p></pre>
+                    <pre><p>D.O.B  : {{card.dob}}</p></pre>
+                    <pre><p>Phone  : {{card.phone}}</p></pre>
+                    <pre><p>Email  : {{card.email}}</p></pre>
+                </div>
+                <img src={{card.profile_picture}} width="100px" height="100px" alt={{card.name}}>
+
+        </div>
+        <hr class="mt-4">
+        <div class="d-flex justify-content-evenly mt-1 align-center">
+            <button class="btn btn-success px-3 py-1">View</button>
+            <button class="btn btn-secondary px-3 py-1">Edit</button>
+            <button class="btn btn-danger px-3 py-1" (click)="delete(card.id)">Delete</button>
+        </div>
+    </div>
+</div>
