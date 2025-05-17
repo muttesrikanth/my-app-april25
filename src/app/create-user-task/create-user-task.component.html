@@ -1,0 +1,123 @@
+<!-- <div style="overflow: auto;" class="w-100 h-100"> -->
+<div class="w-100 h-100 d-flex justify-content-center align-items-center">
+<div class="card w-25 h-100 p-5"  style="overflow: auto">
+<h3>Forms task</h3>
+<form [formGroup]="userForm">
+    <label>name:</label>
+    <input type="text" formControlName="name" >
+    <div class="text-danger p-0 m-0" *ngIf="userForm.get('name')?.touched&&userForm.get('name')?.invalid">
+        <p class="p-0 m-0" *ngIf="userForm.get('name')?.errors?.['required']">required</p>
+        <p class="p-0 m-0" *ngIf="userForm.get('name')?.errors?.['minlength']">name should be grater 6 </p>
+        <p  class="p-0 m-0"*ngIf="userForm.get('name')?.errors?.['maxlength']">name should be lesser 12 </p>
+    </div>
+    <br><label>mobile:</label>
+    <input type="number" formControlName="mobile">
+    <div class="text-danger" *ngIf="userForm.get('mobile')?.touched&&userForm.get('mobile')?.invalid">
+        <p *ngIf="userForm.get('mobile')?.errors?.['required']">required</p>
+        <p *ngIf="userForm.get('mobile')?.errors?.['min']">Min value is 100000000</p>
+        <p *ngIf="userForm.get('mobile')?.errors?.['max']">Max value is 999999999</p>
+    </div>
+    <br><label>class:</label>
+    <input type="number" formControlName="class">
+     <div class="text-danger" *ngIf="userForm.get('class')?.touched&&userForm.get('class')?.invalid">
+        <p *ngIf="userForm.get('class')?.errors?.['required']">required</p>
+        <p *ngIf="userForm.get('class')?.errors?.['min']">Min value is 0</p>
+        <p *ngIf="userForm.get('class')?.errors?.['max']">Max value is 10</p>
+    </div>
+
+    <br><label>fatherName:</label>
+    <input type="text" formControlName="fatherName">
+      <div class="text-danger p-0 m-0" *ngIf="userForm.get('fatherName')?.touched&&userForm.get('fatherName')?.invalid">
+        <p class="p-0 m-0" *ngIf="userForm.get('fatherName')?.errors?.['required']">required</p>
+        <p class="p-0 m-0" *ngIf="userForm.get('fatherName')?.errors?.['minlength']">name should be grater 6 </p>
+        <p  class="p-0 m-0"*ngIf="userForm.get('fatherName')?.errors?.['maxlength']">name should be lesser 12 </p>
+    </div>
+
+
+
+    <br><label>email:</label>
+    <input type="email" formControlName="email">
+       <div class="text-danger" *ngIf="userForm.get('email')?.touched&&userForm.get('email')?.invalid">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['min']">Enter valid email...</p>
+    </div>
+
+
+    <br><label>D.o.b:</label>
+    <input type="date" formControlName="dob">
+        <div class="text-danger" *ngIf="userForm.get('dob')?.touched&&userForm.get('dob')?.invalid">
+        <p *ngIf="userForm.get('dob')?.errors?.['required']">required</p>
+        </div>
+    <div formGroupName='address'>
+        <label>address:</label>
+        <input type="text" formControlName="addressLine">
+            <div class="text-danger" *ngIf="userForm.get('address.addressLine')?.touched && userForm.get('address.addressLine')?.invalid">
+                <p *ngIf="userForm.get('address.addressLine')?.errors?.['required']">required</p>
+            </div><br>
+        <label>city:</label>
+        <input type="text" formControlName="city">
+         <div class="text-danger" *ngIf="userForm.get('address.city')?.touched && userForm.get('address.city')?.invalid">
+            <p *ngIf="userForm.get('address.city')?.errors?.['required']">required</p>
+        </div>
+        <br><label>state:</label>
+        <input type="text" formControlName="state">
+         <div class="text-danger" *ngIf="userForm.get('address.state')?.touched && userForm.get('address.state')?.invalid">
+            <p *ngIf="userForm.get('address.state')?.errors?.['required']">required</p>
+        </div>
+
+        <br><label>pin:</label>
+        <input type="number" formControlName="pincode">
+        <div class="text-danger" *ngIf="userForm.get('address.pincode')?.touched && userForm.get('address.pincode')?.invalid">
+            <p *ngIf="userForm.get('address.pincode')?.errors?.['required']">required</p>
+            <p *ngIf="userForm.get('address.pincode')?.errors?.['min']">pin should be >500000 </p>
+            <p *ngIf="userForm.get('address.pincode')?.errors?.['max']">pin should be < 599999 </p>
+        </div>
+    </div>
+
+    <label>type:</label><br>
+    <input value="dayscholer" type="radio" name="type" formControlName="type">
+    <label>day scholer</label>
+    <input value="hostel" type="radio" name="type" formControlName="type">
+    <!-- <label>percentage</label><br> -->
+
+    <div *ngIf="userForm.get('type')?.value=='dayscholer'">
+        <label>busfee</label>
+        <input type="number" formControlName='busfee'>
+    </div>
+
+
+    <div *ngIf="userForm.get('type')?.value=='hostel'">
+        <label >hostel fee</label>
+        <input type="number" formControlName="hostelfee">
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="addCard()"> add card</button>
+    <br>
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls ; let i=index">
+            <div formGroupName={{i}}>
+                <h1>marks{{i+1}}</h1>
+                <label>class</label>
+                <input type="number" formControlName="class"><br>
+                <label>name</label>
+                <input type="number" formControlName="year"><br>
+                <label>percentage</label>
+                <input type="number"  formControlName="percentage"><br>
+                <div class="text-danger" *ngIf="cardsFormArray.controls[i].get('percentage')?.touched&&cardsFormArray.controls[i].get('percentage')?.invalid">
+                    <p *ngIf="cardsFormArray.controls[i].get('percentage')?.errors?.['required']">Required</p>
+                    <p *ngIf="cardsFormArray.controls[i].get('percentage')?.errors?.['min']">min range from 0</p>
+                    <p *ngIf="cardsFormArray.controls[i].get('percentage')?.errors?.['max']">max from range 100</p>
+                </div>
+                
+                <button (click)="delete(i)" class="btn btn-danger">delete</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+    <button class="btn btn-success" (click)="submit()">Submit</button>
+</form>
+</div>
+</div>
