@@ -1,0 +1,57 @@
+<div class="w-100 h-100" style="overflow: auto;">
+<h4>accounts</h4>
+<input type="text" placeholder="Enter text to search" [(ngModel)]="term" (keyup)="search()"> &nbsp; &nbsp;
+<select [(ngModel)]="column">
+    <option value="account_name">Name</option>
+    <option value="available_balance">balance</option>
+    <option value="account_number">account number</option>
+    <option value="city">city</option>
+    <option value="ifsc_code">ifsc code</option>
+</select>
+<select [(ngModel)]="order">
+    <option value="asc">A-Z</option>
+    <option value="desc">Z-A</option>
+</select>
+<button class="btn btn-primary" (click)="sort()">Sort</button> &nbsp; &nbsp;
+
+<select [(ngModel)]="limit">
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="30">30</option>
+    <option value="40">40</option>
+</select>
+<select [(ngModel)]="page">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+</select>
+<button class="btn btn-primary" (click)="paginate()">Paginate</button> &nbsp; &nbsp;
+<button class="btn btn-success" routerLink="/dashboard/addaccount">Add Account</button>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Account Name</th>
+            <th>Avaliable Balance</th>
+            <th>Account Number</th>
+            <th>City</th>
+            <th>Profile Picture</th>
+            <th>Ifsc Code</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of accounts,let i=index">
+            <td>{{account.account_name}}</td>
+            <td>{{account.available_balance}}</td>
+            <td>{{account.account_number}}</td>
+            <td>{{account.city}}</td>
+            <td><img width="80px" height="40px" src="{{account.profie_picture}}" alt="loading.."></td>
+            <td>{{account.ifsc_code}}</td>
+            <td><button class="btn btn-danger" (click)="delete(i)">delete</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
