@@ -1,1 +1,13 @@
-<p>login works!</p>
+ <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+    <form class="card" [formGroup]="userForm">
+        <h4 class="text-light mb-3">Sign In</h4><br>
+        <input class="text-field text-field2" type="text" placeholder="Email Address" formControlName="email"><br><br>
+        <input class="text-field text-field2"  type="text" placeholder="Password" formControlName="password"><br><br>
+         
+        <Button class="sigin btn spbtn" (click)="sigin()" >Sign in</Button><br><br>
+        <hr>
+         <!-- <Button class="google btn">Sign In With Google</Button><br>
+         <Button class="fb btn">Sign In With Facebook</Button> -->
+         
+    </form>
+</div>

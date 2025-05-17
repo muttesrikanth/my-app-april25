@@ -27,7 +27,10 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { IdCardsComponent } from './id-cards/id-cards.component';
 import { AddIdCardComponent } from './add-id-card/add-id-card.component';
-import { AccountsComponent } from './accounts/accounts.component'
+import { AccountsComponent } from './accounts/accounts.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateUserTaskComponent } from './create-user-task/create-user-task.component';
+import { AddAccountComponent } from './add-account/add-account.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +57,9 @@ import { AccountsComponent } from './accounts/accounts.component'
     IdCardsComponent,
     AddIdCardComponent,
     AccountsComponent,
+    CreateUserComponent,
+    CreateUserTaskComponent,
+    AddAccountComponent,
   ],
   imports: [
     BrowserModule,

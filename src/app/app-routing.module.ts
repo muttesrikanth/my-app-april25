@@ -22,12 +22,17 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { IdCardsComponent } from './id-cards/id-cards.component';
 import { AddIdCardComponent } from './add-id-card/add-id-card.component';
+import { AccountsComponent } from './accounts/accounts.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateUserTaskComponent } from './create-user-task/create-user-task.component';
+import { AddAccountComponent } from './add-account/add-account.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   {path:"shoping",component:ShopingComponent},
   {path:"",component:LoginComponent},
   
-  {path:"dashboard",component:DashboardComponent,children:[
+  {path:"dashboard",component:DashboardComponent,canActivate:[AuthenticationGuard],children:[
     {path:"",component:HomeComponent},
     {path:"data-binding",component:DataBindingComponent},
     {path:"welcome",component:WelcomeComponent},
@@ -45,6 +50,10 @@ const routes: Routes = [
     {path:"createVehicle",component:CreateVehicleComponent},
     {path:'idcards',component:IdCardsComponent},
     {path:'addidcards',component:AddIdCardComponent},
+    {path:'accounts',component:AccountsComponent},
+    {path:'createuser',component:CreateUserComponent},
+    {path:'createusertask',component:CreateUserTaskComponent},
+    {path:'addaccount',component:AddAccountComponent},
   ]},
   {path:"**",component:ErrorComponent}
 ];
