@@ -99,8 +99,16 @@
                 <h1>marks{{i+1}}</h1>
                 <label>class</label>
                 <input type="number" formControlName="class"><br>
+                  <div class="text-danger" *ngIf="cardsFormArray.controls[i].get('class')?.touched&&cardsFormArray.controls[i].get('class')?.invalid">
+                    <p *ngIf="cardsFormArray.controls[i].get('class')?.errors?.['required']">Required</p>
+                    <p *ngIf="cardsFormArray.controls[i].get('class')?.errors?.['min']">min range from 0</p>
+                    <p *ngIf="cardsFormArray.controls[i].get('class')?.errors?.['max']">max from range 10</p>
+                </div>
                 <label>name</label>
                 <input type="number" formControlName="year"><br>
+                <div class="text-danger" *ngIf="cardsFormArray.controls[i].get('year')?.touched&&cardsFormArray.controls[i].get('year')?.invalid">
+                    <p *ngIf="cardsFormArray.controls[i].get('year')?.errors?.['required']">Required</p>
+                </div>
                 <label>percentage</label>
                 <input type="number"  formControlName="percentage"><br>
                 <div class="text-danger" *ngIf="cardsFormArray.controls[i].get('percentage')?.touched&&cardsFormArray.controls[i].get('percentage')?.invalid">
