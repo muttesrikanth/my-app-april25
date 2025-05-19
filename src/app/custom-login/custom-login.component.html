@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center align-items-center w-100 h-100">
+    <form class="bg-success p-4 w-25 rounded" [formGroup]="customForm">
+        <h4 class="text-danger text-center" *ngIf="switch">Sinup</h4>
+        <h4 class="text-danger text-center" *ngIf="!switch">Login</h4>
+        <div class="mb-3" *ngIf="switch">
+            <label for="exampleInputEmail" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail" formControlName="name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+        </div>
+        <div class="mb-3"*ngIf="switch">
+            <label for="exampleInputEmail2" class="form-label">Mobile</label>
+            <input type="number" class="form-control" id="exampleInputEmail2" formControlName="mobile" >
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3" *ngIf="switch" (click)="sinup()" >Sinup</button>
+        <button type="submit" class="btn btn-primary mb-3" *ngIf="!switch" (click)="login()">login</button><br>
+        <button type="submit" class="btn btn-warning" (click)="swichMode()">switch</button>
+
+
+    </form>
+</div>
