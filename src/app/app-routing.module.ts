@@ -27,6 +27,9 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateUserTaskComponent } from './create-user-task/create-user-task.component';
 import { AddAccountComponent } from './add-account/add-account.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { CustomLoginComponent } from './custom-login/custom-login.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { ViewIdcardComponent } from './view-idcard/view-idcard.component';
 
 const routes: Routes = [
   {path:"shoping",component:ShopingComponent},
@@ -54,6 +57,9 @@ const routes: Routes = [
     {path:'createuser',component:CreateUserComponent},
     {path:'createusertask',component:CreateUserTaskComponent},
     {path:'addaccount',component:AddAccountComponent},
+    {path:'customlogin',component:CustomLoginComponent},
+    {path:'vehicle-details/:id',component:VehicleDetailsComponent},
+    {path:'view-idcard/:id',component:ViewIdcardComponent},
   ]},
   {path:"**",component:ErrorComponent}
 ];

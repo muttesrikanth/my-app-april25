@@ -30,7 +30,10 @@ import { AddIdCardComponent } from './add-id-card/add-id-card.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateUserTaskComponent } from './create-user-task/create-user-task.component';
-import { AddAccountComponent } from './add-account/add-account.component'
+import { AddAccountComponent } from './add-account/add-account.component';
+import { CustomLoginComponent } from './custom-login/custom-login.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { ViewIdcardComponent } from './view-idcard/view-idcard.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +63,9 @@ import { AddAccountComponent } from './add-account/add-account.component'
     CreateUserComponent,
     CreateUserTaskComponent,
     AddAccountComponent,
+    CustomLoginComponent,
+    VehicleDetailsComponent,
+    ViewIdcardComponent,
   ],
   imports: [
     BrowserModule,

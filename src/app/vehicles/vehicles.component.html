@@ -36,7 +36,7 @@
                 <th>model</th>
                 <th>type</th>
                 <th>fuel</th>
-                <th>Action</th>
+                <th colspan="2">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +47,7 @@
                 <td>{{ vehical.model }}</td>
                 <td>{{ vehical.type }}</td>
                 <td>{{ vehical.fuel }}</td>
+                <td><button class="btn btn-info" routerLink="/dashboard/vehicle-details/{{vehical.id}}" ><i class="bi bi-eye"></i></button></td>
                 <td><button class="btn btn-danger" (click)="delete(vehical.id)">Delete</button></td>
                
             </tr>
