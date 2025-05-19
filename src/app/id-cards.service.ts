@@ -11,6 +11,9 @@ export class IdCardsService {
   getIdCards():Observable<any>{
     return this._http.get('https://6128991386a213001729f9df.mockapi.io/test/v1/student')
   }
+  getIdCard(id:any):Observable<any>{
+    return this._http.get('https://6128991386a213001729f9df.mockapi.io/test/v1/student/'+id)
+  }
   searchIdCards(term:string):Observable<any>{
      return this._http.get('https://6128991386a213001729f9df.mockapi.io/test/v1/student?filter='+term)
   }

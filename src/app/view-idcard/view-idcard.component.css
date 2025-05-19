@@ -1,0 +1,6 @@
+ul li:nth-child(even){
+    color: rgb(237, 132, 113);
+}
+.card{
+    background-color: rgb(208, 255, 183) !important;
+}
