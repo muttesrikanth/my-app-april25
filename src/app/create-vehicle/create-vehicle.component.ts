@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { VehiclesService } from '../vehicles.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-vehicle',
@@ -9,7 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-vehicle.component.css']
 })
 export class CreateVehicleComponent {
-  constructor(private _vehicelService:VehiclesService,private _router:Router){}
+  id:any=''
+  constructor(private _vehicelService:VehiclesService,private _router:Router,private _activatedroute:ActivatedRoute){
+    _activatedroute.params.subscribe((data:any)=>{
+      this.id=data.id
+      _vehicelService.getVehicle(data.id).subscribe((data:any)=>{
+        console.log(data)
+        this.vehicleForm.patchValue(data)
+      })
+    },(e)=>{alert('unable to fetch data')})
+  }
   public vehicleForm:FormGroup=new FormGroup({
     Vehicle:new FormControl(),
     color:new FormControl(),
@@ -22,14 +31,26 @@ export class CreateVehicleComponent {
     tyres:new FormControl(),
   })
 submit(){
-  console.log(this.vehicleForm.value)
-  this._vehicelService.createVehicel(this.vehicleForm.value).subscribe(
-    (data:any)=>{
-      alert('created with id:'+data.id)
-      this._router.navigateByUrl('/dashboard/vehicles')
-    },(e)=>{
-      alert('internal server error')
-    }
-  )
+  // console.log(this.vehicleForm.value)
+  if(this.id){
+    this._vehicelService.editVehicel(this.id,this.vehicleForm.value).subscribe(
+      (data:any)=>{
+        alert('created with id:'+data.id)
+        this._router.navigate(['/dashboard/vehicles'])
+      },(e)=>{
+        alert('unable to update')
+      }
+    )
+  }
+  else{
+    this._vehicelService.createVehicel(this.vehicleForm.value).subscribe(
+      (data:any)=>{
+        alert('created with id:'+data.id)
+        this._router.navigateByUrl('/dashboard/vehicles')
+      },(e)=>{
+        alert('internal server error')
+      }
+    )
+  }
 }
 }

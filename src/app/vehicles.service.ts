@@ -30,5 +30,8 @@ export class VehiclesService {
   createVehicel(data:any){
     return this._http.post('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction',data)
   }
+  editVehicel(id:any,data:any){
+    return this._http.put('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction/'+id,data)
+  }
   
 }
