@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent{
+  visible:boolean=false;
   constructor(private _loginService:LoginService,public _router:Router){}
   data:any=[]
 
@@ -23,6 +24,9 @@ sigin(){
     this._router.navigateByUrl('/dashboard')
   }
     ,(e)=>{alert("internal server error")})
+}
+toglevisible(){
+  this.visible=!this.visible
 }
 
 }
