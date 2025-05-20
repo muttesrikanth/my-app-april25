@@ -73,7 +73,7 @@
         <hr class="mt-4">
         <div class="d-flex justify-content-evenly mt-1 align-center">
             <button class="btn btn-success px-3 py-1" routerLink="/dashboard/view-idcard/{{card.id}}">View</button>
-            <button class="btn btn-secondary px-3 py-1">Edit</button>
+            <button class="btn btn-secondary px-3 py-1"  routerLink="/dashboard/edit-idcard/{{card.id}}" >Edit</button>
             <button class="btn btn-danger px-3 py-1" (click)="delete(card.id)">Delete</button>
         </div>
     </div>

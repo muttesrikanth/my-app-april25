@@ -26,6 +26,9 @@ export class IdCardsService {
   addIdCard(data:any){
     return this._http.post('https://6128991386a213001729f9df.mockapi.io/test/v1/student',data)
   }
+  editIdCard(id:any,data:any){
+    return this._http.put('https://6128991386a213001729f9df.mockapi.io/test/v1/student/'+id,data)
+  }
   deleteCard(id:any){
       return this._http.delete('https://6128991386a213001729f9df.mockapi.io/test/v1/student/'+id)
   }

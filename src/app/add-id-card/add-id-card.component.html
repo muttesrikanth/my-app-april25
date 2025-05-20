@@ -1,5 +1,5 @@
 <div class="card w-50 p-2 bg-secondary text-warning">
-    <h3 class="text-danger">Create Id Card</h3>
+    <h3 class="text-danger">{{id?"Edit id card":"Create Id Card"}}</h3>
     <form [formGroup]="idCardForm">
         <label>Student Name</label>
         <input type="text" formControlName="name"><br>

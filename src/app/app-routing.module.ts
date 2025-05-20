@@ -60,6 +60,7 @@ const routes: Routes = [
     {path:'customlogin',component:CustomLoginComponent},
     {path:'vehicle-details/:id',component:VehicleDetailsComponent},
     {path:'view-idcard/:id',component:ViewIdcardComponent},
+    {path:'edit-idcard/:id',component:AddIdCardComponent},
     {path:'edit-vehicle/:id',component:CreateVehicleComponent},
 
   ]},
