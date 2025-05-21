@@ -35,6 +35,7 @@ import { CustomLoginComponent } from './custom-login/custom-login.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { ViewIdcardComponent } from './view-idcard/view-idcard.component';
 import { CommunicationComponent } from './communication/communication.component';
+import { ChildComponent } from './child/child.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { CommunicationComponent } from './communication/communication.component'
     VehicleDetailsComponent,
     ViewIdcardComponent,
     CommunicationComponent,
+    ChildComponent,
   
   ],
   imports: [
