@@ -5,7 +5,9 @@
           <h5 class="card-title">{{product.category}}</h5>
           <p class="card-text text-secondary">{{product.title}}</p>
           <p class="card-text text-danger">{{product.price|currency:"INR"}}</p>
-          <span class="rating px-3 rounded">{{product.rating.rate}}</span>
+          <!-- <span class=" px-3 rounded"> -->
+            <app-rating class="rating" [rating]=product.rating.rate  ></app-rating>
+          <!-- </span> -->
         </div>
       </div>
 

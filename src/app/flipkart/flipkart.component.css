@@ -15,5 +15,5 @@
 .rating{
     position: absolute;
     top: -40px;
-    background-color: rgba(128, 128, 128, 0.68);
+    /* background-color: rgba(128, 128, 128, 0.68); */
 }
