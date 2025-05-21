@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./communication.component.css']
 })
 export class CommunicationComponent {
-
+get(val:any){
+  alert(val)
+}
 }
