@@ -36,6 +36,11 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
 import { ViewIdcardComponent } from './view-idcard/view-idcard.component';
 import { CommunicationComponent } from './communication/communication.component';
 import { ChildComponent } from './child/child.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { Sibling2Component } from './sibling2/sibling2.component';
+import { ParentTaskComponent } from './parent-task/parent-task.component';
+import { RatingComponent } from './rating/rating.component';
+import { TextAreaComponent } from './text-area/text-area.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +75,11 @@ import { ChildComponent } from './child/child.component';
     ViewIdcardComponent,
     CommunicationComponent,
     ChildComponent,
+    Sibling1Component,
+    Sibling2Component,
+    ParentTaskComponent,
+    RatingComponent,
+    TextAreaComponent,
   
   ],
   imports: [

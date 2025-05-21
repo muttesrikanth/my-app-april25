@@ -31,6 +31,8 @@ import { CustomLoginComponent } from './custom-login/custom-login.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { ViewIdcardComponent } from './view-idcard/view-idcard.component';
 import { CommunicationComponent } from './communication/communication.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { ParentTaskComponent } from './parent-task/parent-task.component';
 
 const routes: Routes = [
   {path:"shoping",component:ShopingComponent},
@@ -64,6 +66,8 @@ const routes: Routes = [
     {path:'edit-idcard/:id',component:AddIdCardComponent},
     {path:'edit-vehicle/:id',component:CreateVehicleComponent},
     {path:'communication',component:CommunicationComponent},
+    {path:'sibling',component:Sibling1Component},
+    {path:'parentchildtask',component:ParentTaskComponent},
 
   ]},
   {path:"**",component:ErrorComponent}
