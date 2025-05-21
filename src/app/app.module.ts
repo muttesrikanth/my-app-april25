@@ -34,6 +34,7 @@ import { AddAccountComponent } from './add-account/add-account.component';
 import { CustomLoginComponent } from './custom-login/custom-login.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { ViewIdcardComponent } from './view-idcard/view-idcard.component';
+import { CommunicationComponent } from './communication/communication.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,7 @@ import { ViewIdcardComponent } from './view-idcard/view-idcard.component';
     CustomLoginComponent,
     VehicleDetailsComponent,
     ViewIdcardComponent,
+    CommunicationComponent,
   
   ],
   imports: [

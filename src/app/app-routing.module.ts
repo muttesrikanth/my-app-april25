@@ -30,6 +30,7 @@ import { AuthenticationGuard } from './authentication.guard';
 import { CustomLoginComponent } from './custom-login/custom-login.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { ViewIdcardComponent } from './view-idcard/view-idcard.component';
+import { CommunicationComponent } from './communication/communication.component';
 
 const routes: Routes = [
   {path:"shoping",component:ShopingComponent},
@@ -62,6 +63,7 @@ const routes: Routes = [
     {path:'view-idcard/:id',component:ViewIdcardComponent},
     {path:'edit-idcard/:id',component:AddIdCardComponent},
     {path:'edit-vehicle/:id',component:CreateVehicleComponent},
+    {path:'communication',component:CommunicationComponent},
 
   ]},
   {path:"**",component:ErrorComponent}
