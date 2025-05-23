@@ -3,17 +3,22 @@
 </h1>
 <form [formGroup]="userForm">
     <label>name:</label>
-    <input type="text" formControlName="name" >
+    <input type="text" formControlName="name">
     <div class="text-danger" *ngIf="userForm.get('name')?.touched&&userForm.get('name')?.invalid">
         <p *ngIf="userForm.get('name')?.errors?.['required']">required</p>
         <p *ngIf="userForm.get('name')?.errors?.['minlength']">name should be grater 6 </p>
         <p *ngIf="userForm.get('name')?.errors?.['maxlength']">name should be lesser 12 </p>
-
     </div>
     <br><label>mobile:</label>
     <input type="number" formControlName="mobile">
     <br><label>email:</label>
     <input type="email" formControlName="email">
+       <div class="text-danger" *ngIf="userForm.get('email')?.touched&&userForm.get('email')?.invalid">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['minlength']">email should be grater 6 </p>
+        <p *ngIf="userForm.get('email')?.errors?.['maxlength']">email should be lesser 12 </p>
+        <p *ngIf="userForm.get('email')?.errors?.['tcsmail']">enter valid email</p>
+    </div>
     <br><label>password:</label>
     <input type="password" formControlName="password">
     <div formGroupName='address'>
