@@ -19,7 +19,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeDataTaskComponent } from './employee-data-task/employee-data-task.component';
 import { ShopingComponent } from './shoping/shoping.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { MailComponent } from './mail/mail.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { WeatherComponent } from './weather/weather.component';
@@ -43,6 +43,7 @@ import { RatingComponent } from './rating/rating.component';
 import { TextAreaComponent } from './text-area/text-area.component';
 import { CapitalDirective } from './capital.directive';
 import { InrPipe } from './inr.pipe';
+import { TokenInterceptor } from './token.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,7 +94,13 @@ import { InrPipe } from './inr.pipe';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
