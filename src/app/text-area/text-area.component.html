@@ -1,2 +1,3 @@
-<textarea rows="7" cols="50" [(ngModel)]="term"></textarea>
+<textarea rows="7" cols="50" [(ngModel)]="term" appCapital></textarea>
 <span>{{term.length}}/{{max}}</span>
+{{term|inr}}
