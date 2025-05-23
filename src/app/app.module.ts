@@ -41,6 +41,8 @@ import { Sibling2Component } from './sibling2/sibling2.component';
 import { ParentTaskComponent } from './parent-task/parent-task.component';
 import { RatingComponent } from './rating/rating.component';
 import { TextAreaComponent } from './text-area/text-area.component';
+import { CapitalDirective } from './capital.directive';
+import { InrPipe } from './inr.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +82,8 @@ import { TextAreaComponent } from './text-area/text-area.component';
     ParentTaskComponent,
     RatingComponent,
     TextAreaComponent,
+    CapitalDirective,
+    InrPipe,
   
   ],
   imports: [
