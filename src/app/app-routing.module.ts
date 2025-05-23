@@ -33,6 +33,7 @@ import { ViewIdcardComponent } from './view-idcard/view-idcard.component';
 import { CommunicationComponent } from './communication/communication.component';
 import { Sibling1Component } from './sibling1/sibling1.component';
 import { ParentTaskComponent } from './parent-task/parent-task.component';
+import { PaymentsModule } from './payments/payments.module';
 
 const routes: Routes = [
   {path:"shoping",component:ShopingComponent},
@@ -70,6 +71,7 @@ const routes: Routes = [
     {path:'parentchildtask',component:ParentTaskComponent},
 
   ]},
+  {path:'payments',loadChildren:()=> import('./payments/payments.module').then(m=>m.PaymentsModule)},
   {path:"**",component:ErrorComponent}
 ];
 
