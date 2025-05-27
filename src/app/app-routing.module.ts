@@ -34,6 +34,7 @@ import { CommunicationComponent } from './communication/communication.component'
 import { Sibling1Component } from './sibling1/sibling1.component';
 import { ParentTaskComponent } from './parent-task/parent-task.component';
 import { PaymentsModule } from './payments/payments.module';
+import { HooksComponent } from './hooks/hooks.component';
 
 const routes: Routes = [
   {path:"shoping",component:ShopingComponent},
@@ -69,6 +70,7 @@ const routes: Routes = [
     {path:'communication',component:CommunicationComponent},
     {path:'sibling',component:Sibling1Component},
     {path:'parentchildtask',component:ParentTaskComponent},
+    {path:'hooks',component:HooksComponent},
 
   ]},
   {path:'payments',loadChildren:()=> import('./payments/payments.module').then(m=>m.PaymentsModule)},
