@@ -7,7 +7,8 @@ import { WeatherService } from '../weather.service';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent {
-  weatherData:any={}
+  // weatherData:any={}
+  weatherData:any = { temperature: 0, humidity: 0 , is_day: true };
   constructor(private _weatherService:WeatherService){
     _weatherService.getWeather().subscribe((data:any)=>{
 this.weatherData=data;

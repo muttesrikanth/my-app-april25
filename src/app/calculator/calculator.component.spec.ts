@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms'; // 👈 Import this
 import { CalculatorComponent } from './calculator.component';
 
 describe('CalculatorComponent', () => {
@@ -8,9 +8,9 @@ describe('CalculatorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CalculatorComponent ]
-    })
-    .compileComponents();
+      declarations: [ CalculatorComponent ],
+      imports: [ FormsModule ] // 👈 Add this
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CalculatorComponent);
     component = fixture.componentInstance;

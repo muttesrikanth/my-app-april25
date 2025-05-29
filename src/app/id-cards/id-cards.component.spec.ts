@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms'; // <-- Add this
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { IdCardsComponent } from './id-cards.component';
 
 describe('IdCardsComponent', () => {
@@ -8,9 +9,9 @@ describe('IdCardsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule, FormsModule], // <-- Add FormsModule here
       declarations: [ IdCardsComponent ]
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(IdCardsComponent);
     component = fixture.componentInstance;

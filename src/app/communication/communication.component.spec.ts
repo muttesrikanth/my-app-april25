@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; // ✅
 
 import { CommunicationComponent } from './communication.component';
 
@@ -8,7 +9,8 @@ describe('CommunicationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CommunicationComponent ]
+      declarations: [ CommunicationComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]  // ✅ add this line
     })
     .compileComponents();
 

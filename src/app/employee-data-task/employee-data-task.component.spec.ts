@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';  // <-- Add this
 
 import { EmployeeDataTaskComponent } from './employee-data-task.component';
 
@@ -8,7 +9,8 @@ describe('EmployeeDataTaskComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmployeeDataTaskComponent ]
+      declarations: [ EmployeeDataTaskComponent ],
+      imports: [ FormsModule ]  // <-- Import FormsModule here
     })
     .compileComponents();
 

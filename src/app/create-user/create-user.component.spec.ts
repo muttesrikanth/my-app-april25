@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';  // <-- import this
 
 import { CreateUserComponent } from './create-user.component';
 
@@ -8,9 +9,9 @@ describe('CreateUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateUserComponent ]
-    })
-    .compileComponents();
+      declarations: [ CreateUserComponent ],
+      imports: [ ReactiveFormsModule ]  // <-- add here
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CreateUserComponent);
     component = fixture.componentInstance;

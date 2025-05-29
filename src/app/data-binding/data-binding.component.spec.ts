@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms'; // 👈 Add this
 import { DataBindingComponent } from './data-binding.component';
 
 describe('DataBindingComponent', () => {
@@ -8,7 +8,8 @@ describe('DataBindingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataBindingComponent ]
+      declarations: [ DataBindingComponent ],
+      imports: [ FormsModule ] // 👈 Add FormsModule
     })
     .compileComponents();
 

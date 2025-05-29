@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';  // <-- Import FormsModule
 
 import { RectangleComponent } from './rectangle.component';
 
@@ -8,9 +9,9 @@ describe('RectangleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RectangleComponent ]
-    })
-    .compileComponents();
+      declarations: [ RectangleComponent ],
+      imports: [ FormsModule ]  // <-- Add FormsModule here
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RectangleComponent);
     component = fixture.componentInstance;
