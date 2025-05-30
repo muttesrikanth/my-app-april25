@@ -45,6 +45,8 @@ import { CapitalDirective } from './capital.directive';
 import { InrPipe } from './inr.pipe';
 import { TokenInterceptor } from './token.interceptor';
 import { StoreModule } from '@ngrx/store';
+import { NgrxComponent } from './ngrx/ngrx.component';
+import { counterReducer } from './ngrx/counter.reducer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +88,7 @@ import { StoreModule } from '@ngrx/store';
     TextAreaComponent,
     CapitalDirective,
     InrPipe,
+    NgrxComponent,
   
   ],
   imports: [
@@ -94,7 +97,7 @@ import { StoreModule } from '@ngrx/store';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({count:counterReducer}, {})
   ],
   providers: [
     {
